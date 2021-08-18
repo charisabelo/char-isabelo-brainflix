@@ -1,0 +1,7 @@
+@import "../../partials/mixins";
+
+.header {
+  &__nav {
+    @include flex-column;
+  }
+}
