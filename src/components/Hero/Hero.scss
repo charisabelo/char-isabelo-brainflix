@@ -30,6 +30,15 @@
     padding: 0 1rem;
   }
 
+  &__scrubber-time {
+    color: $white;
+
+    &--hidden {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
   &__play-container {
     padding: 0 0.8rem;
     margin-right: 1rem;

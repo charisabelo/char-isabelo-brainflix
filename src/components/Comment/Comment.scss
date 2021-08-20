@@ -1,0 +1,37 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.comment {
+  display: flex;
+  padding: 2.3rem 0;
+  border-bottom: 0.1rem solid $mercury;
+
+  &__user-img {
+    border-radius: 50%;
+    height: 4.2rem;
+    width: 4.2rem;
+    background-color: $mercury;
+    margin-right: 1.4rem;
+  }
+
+  &__user-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+
+  &__user-name {
+    font-weight: 600;
+  }
+
+  &__user-date {
+    font-weight: 400;
+    color: $silver;
+    font-size: 1.4rem;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+}

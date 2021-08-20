@@ -16,6 +16,11 @@ function Hero() {
             </div>
             <div className="hero__scrubber-container">
               <div className="hero__scrubber"></div>
+              <div className="hero__scrubber-time hero__scrubber-time--hidden">
+                <span>0:00</span>
+                <span>/</span>
+                <span>0:42</span>
+              </div>
             </div>
             <div className="hero__tools-container">
               <span className="material-icons hero__fullscreen-icon">
@@ -26,7 +31,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      {/* <Main /> */}
+      <Main />
     </div>
   );
 }

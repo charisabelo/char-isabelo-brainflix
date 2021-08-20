@@ -1,0 +1,85 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.details {
+  &__header {
+    position: relative;
+    line-height: 3.7rem;
+    color: $black;
+    font-size: 2.5rem;
+    bottom: 1.4rem;
+  }
+
+  &__channel {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-right: 1.1rem;
+  }
+
+  &__date-posted {
+    color: $silver;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  &__author-date {
+    display: flex;
+    padding-bottom: 3rem;
+  }
+
+  &__icons-container {
+    display: flex;
+    height: auto;
+    border-bottom: 0.1rem solid $mercury;
+    padding-bottom: 2.8rem;
+  }
+
+  &__views {
+    font-weight: 400;
+    font-size: 1.7rem;
+
+    &-container {
+      display: flex;
+      margin-right: 2rem;
+    }
+
+    &-icon {
+      background-image: url(../../assets/Icons/Icon-views.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 1.7rem;
+      width: 2.4rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__likes {
+    font-weight: 400;
+    font-size: 1.7rem;
+
+    &-container {
+      display: flex;
+    }
+
+    &-icon {
+      background-image: url(../../assets/Icons/Icon-likes.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 1.9rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1.3rem;
+
+    &-container {
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
