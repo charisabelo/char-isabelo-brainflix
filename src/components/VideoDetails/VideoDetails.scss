@@ -30,6 +30,9 @@
   &__icons-container {
     display: flex;
     height: auto;
+  }
+
+  &__info {
     border-bottom: 0.1rem solid $mercury;
     padding-bottom: 2.8rem;
   }
@@ -80,6 +83,94 @@
     &-container {
       padding-top: 2.5rem;
       padding-bottom: 3rem;
+    }
+  }
+
+  @include tablet {
+    &__header {
+      font-size: 3.4rem;
+      bottom: 0;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 2.5rem;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+    }
+
+    &__author-date {
+      padding-bottom: 0;
+    }
+
+    &__icons-container {
+      margin-right: 4.7rem;
+    }
+
+    &__channel {
+      font-size: 1.5rem;
+    }
+
+    &__date-posted {
+      font-size: 1.4rem;
+    }
+
+    &__views {
+      font-size: 1.5rem;
+
+      &-icon {
+        height: 1.5rem;
+        width: 2rem;
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__likes {
+      font-size: 1.5rem;
+
+      &-icon {
+        transform: scale(0.9);
+      }
+    }
+
+    &__description {
+      width: 72%;
+      font-size: 1.4rem;
+
+      &-container {
+        padding-top: 3.5rem;
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  @include desktop {
+    &__header {
+      font-size: 3.6rem;
+    }
+
+    &__channel {
+      font-size: 1.6rem;
+    }
+
+    &__date-posted {
+      font-size: 1.5rem;
+    }
+
+    &__info {
+      margin-top: 2.1rem;
+    }
+
+    &__description {
+      width: 75%;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
     }
   }
 }

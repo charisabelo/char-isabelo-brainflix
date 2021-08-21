@@ -1,6 +1,19 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
 .main {
   display: flex;
   flex-direction: column;
   padding: 0 1.7rem;
   width: 100%;
+
+  @include tablet {
+    padding: 0 2.4rem;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 17rem;
+  }
 }

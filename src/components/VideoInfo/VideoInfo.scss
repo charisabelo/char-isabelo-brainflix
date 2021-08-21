@@ -1,2 +1,7 @@
 @import "../../partials/mixins";
 @import "../../partials/variables";
+
+.details__container {
+  border-right: 0.2rem solid $mercury;
+  width: 67%;
+}

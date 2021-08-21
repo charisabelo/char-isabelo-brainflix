@@ -74,4 +74,67 @@
     font-weight: 600;
     font-size: 1.4rem;
   }
+
+  @include tablet {
+    &__count h3 {
+      font-size: 1.7rem;
+      margin-bottom: 2.2rem;
+    }
+
+    &__label-container {
+      width: 44rem;
+      margin-right: 1.6rem;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: row;
+
+      &-container {
+        padding-bottom: 0.3rem;
+      }
+    }
+
+    &__textarea {
+      height: 4.2rem;
+      width: 44rem;
+      padding: 1rem 0 1rem 1.3rem;
+      margin-bottom: 1.6rem;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 1.3rem;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      align-self: center;
+      padding: 0 3.6rem;
+      font-size: 1.3rem;
+      height: 4.2rem;
+      border-radius: 0.4rem;
+    }
+  }
+
+  @include desktop {
+    &__btn {
+      padding: 0 4rem;
+    }
+
+    &__textarea {
+      height: 4.4rem;
+      width: 47rem;
+      margin-top: 0.2rem;
+    }
+
+    &__label {
+      padding-bottom: 1rem;
+    }
+
+    &__label-container {
+      width: 47rem;
+      margin-right: 1.6rem;
+    }
+  }
 }

@@ -72,6 +72,42 @@
   &__scrubber {
     width: 100%;
     height: 0.4rem;
-    background-color: black;
+    background-color: $darkblack;
+  }
+
+  @include tablet {
+    &__video--container {
+      display: flex;
+      justify-content: center;
+      background-color: $darkblack;
+    }
+
+    &__video {
+      width: 90%;
+    }
+
+    &__controls-container {
+      width: 90%;
+      bottom: 5rem;
+    }
+
+    &__scrubber-time--hidden {
+      position: initial;
+      visibility: visible;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-left: 1.7rem;
+    }
+  }
+
+  @include desktop {
+    &__video {
+      width: 69%;
+    }
+
+    &__controls-container {
+      width: 69%;
+      bottom: 5.3rem;
+    }
   }
 }

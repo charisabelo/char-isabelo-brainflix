@@ -6,7 +6,7 @@ import React from "react";
 class VideoInfo extends React.Component {
   render() {
     return (
-      <div>
+      <div className="details__container">
         <VideoDetails data={this.props.data} />
         <VideoComments data={this.props.data} />
       </div>

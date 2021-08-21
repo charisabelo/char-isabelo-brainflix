@@ -4,10 +4,6 @@ import "./NextVideo.scss";
 class NextVideo extends React.Component {
   render() {
     // console.log(this.props);
-    // let checkStringLength =
-    //   this.props.title.length < 34
-    //     ? this.props.title
-    //     : this.props.title.substring(0, 34) + "...";
 
     return (
       <div className="next__container">

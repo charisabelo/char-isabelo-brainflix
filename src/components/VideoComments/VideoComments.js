@@ -19,15 +19,18 @@ class VideoComments extends React.Component {
           </div>
           <div className="comments__comment-area">
             <form className="comments__form" action="">
-              <label className="comments__label" htmlFor="comment">
-                JOIN THE CONVERSATION
-              </label>
-              <textarea
-                className="comments__textarea"
-                name="comment"
-                id="comment"
-                placeholder="Write comment here"
-              ></textarea>
+              <div className="comments__label-container ">
+                <label className="comments__label" htmlFor="comment">
+                  JOIN THE CONVERSATION
+                </label>
+                <textarea
+                  className="comments__textarea"
+                  name="comment"
+                  id="comment"
+                  placeholder="Write comment here"
+                ></textarea>
+              </div>
+
               <input className="comments__btn" type="submit" value="COMMENT" />
             </form>
           </div>
