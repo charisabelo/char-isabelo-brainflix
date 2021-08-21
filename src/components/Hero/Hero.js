@@ -1,15 +1,32 @@
-import videos from "../../data/videos.json";
+import videos from "../../data/video-details.json";
 import "./Hero.scss";
 import Main from "../Main/Main";
 import React from "react";
 
 class Hero extends React.Component {
+  state = {
+    data: videos,
+    selectedVideo: videos[0],
+  };
+
+  currentVideo = (id) => {
+    let newVideo = this.state.data.find((video) => video.id === id);
+
+    this.setState({
+      selectedVideo: newVideo,
+    });
+  };
+
   render() {
+    // console.log(videos);
     return (
       <div>
         <div className="hero">
           <div className="hero__video--container">
-            <video className="hero__video" poster={videos[0].image}></video>
+            <video
+              className="hero__video"
+              poster={this.state.selectedVideo.image}
+            ></video>
           </div>
           <div className="hero__controls-container">
             <div className="hero__controls">
@@ -37,7 +54,11 @@ class Hero extends React.Component {
             </div>
           </div>
         </div>
-        <Main />
+        <Main
+          data={videos}
+          currentVideo={this.state.selectedVideo}
+          handleClick={this.currentVideo}
+        />
       </div>
     );
   }

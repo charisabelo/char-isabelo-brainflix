@@ -4,8 +4,9 @@ import NextVideo from "../NextVideo/NextVideo";
 
 class NextVideosList extends React.Component {
   render() {
-    // console.log(this.props.nextData);
-    let videos = this.props.nextData;
+    console.log(this.props);
+    let videos = this.props.data;
+
     return (
       <section className="next">
         <h6 className="next__header">NEXT VIDEO</h6>

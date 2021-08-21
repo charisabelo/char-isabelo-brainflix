@@ -5,10 +5,11 @@ import React from "react";
 
 class VideoInfo extends React.Component {
   render() {
+    // console.log(this.props.currentVideo);
     return (
       <div className="details__container">
-        <VideoDetails data={this.props.data} />
-        <VideoComments data={this.props.data} />
+        <VideoDetails currentVideo={this.props.currentVideo} />
+        <VideoComments currentVideo={this.props.currentVideo} />
       </div>
     );
   }

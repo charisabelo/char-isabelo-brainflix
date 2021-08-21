@@ -4,14 +4,13 @@ import Comment from "../Comment/Comment";
 
 class VideoComments extends React.Component {
   render() {
-    // console.log(this.props.data[0].comments);
-    let currentVideoComments = this.props.data[0].comments;
-    // console.log(currentVideoComments);
+    // console.log(this.props.currentVideo);
+    const current = this.props.currentVideo;
 
     return (
       <section className="comments">
         <div className="comments__count">
-          <h3>{this.props.data[0].comments.length} comments</h3>
+          <h3>{current.comments.length} comments</h3>
         </div>
         <div className="comments__form-container">
           <div className="comments__user-container">
@@ -36,7 +35,7 @@ class VideoComments extends React.Component {
           </div>
         </div>
         <div className="comments__list">
-          {currentVideoComments.map((comment) => {
+          {current.comments.map((comment) => {
             return (
               <Comment
                 key={comment.id}
