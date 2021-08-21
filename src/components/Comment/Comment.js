@@ -3,8 +3,6 @@ import "./Comment.scss";
 
 class Comment extends React.Component {
   render() {
-    // console.log(this.props);
-    // console.log(this.props.data[0]);
     const unixDate = this.props.timestamp;
     let date = new Date(unixDate);
     const newDateOptions = {

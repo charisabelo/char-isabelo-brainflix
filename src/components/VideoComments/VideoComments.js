@@ -4,7 +4,6 @@ import Comment from "../Comment/Comment";
 
 class VideoComments extends React.Component {
   render() {
-    // console.log(this.props.currentVideo);
     const current = this.props.currentVideo;
 
     return (

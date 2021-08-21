@@ -3,7 +3,6 @@ import "./VideoDetails.scss";
 
 class VideoDetails extends React.Component {
   render() {
-    // console.log(this.props.currentVideo);
     const unixDate = this.props.currentVideo.timestamp;
     let date = new Date(unixDate);
     const newDateOptions = {

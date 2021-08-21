@@ -3,10 +3,13 @@ import "./NextVideo.scss";
 
 class NextVideo extends React.Component {
   render() {
-    // console.log(this.props);
-
     return (
-      <div className="next__container">
+      <div
+        className="next__container"
+        onClick={() => {
+          this.props.handleClick(this.props.data.id);
+        }}
+      >
         <div className="next__image-container">
           <div
             className="next__image"
@@ -21,6 +24,5 @@ class NextVideo extends React.Component {
     );
   }
 }
-// style={{ backgroundImage: `url(${video.image})` }}
 
 export default NextVideo;

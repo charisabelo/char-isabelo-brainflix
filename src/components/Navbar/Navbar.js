@@ -7,7 +7,9 @@ class Navbar extends React.Component {
     return (
       <div className="header__nav">
         <div className="header__logo-container">
-          <img className="header__logo" src={logo} alt="brainflix logo" />
+          <a href="/">
+            <img className="header__logo" src={logo} alt="brainflix logo" />
+          </a>
         </div>
         <div className="header__form-container">
           <form className="header__form" action="">

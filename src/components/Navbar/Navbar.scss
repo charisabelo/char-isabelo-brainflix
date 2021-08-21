@@ -1,5 +1,5 @@
-@import "../../partials/mixins";
-@import "../../partials/variables";
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
 
 .header {
   &__nav {
@@ -48,6 +48,7 @@
     background-image: url(../../assets/Icons/Icon-upload.svg);
     background-repeat: no-repeat;
     background-position: 7.2rem 1.3rem;
+    cursor: pointer;
   }
 
   &__user-photo {
@@ -58,6 +59,7 @@
     height: 4rem;
     width: 3.9rem;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   @include tablet {

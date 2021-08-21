@@ -1,11 +1,12 @@
-@import "../../partials/mixins";
-@import "../../partials/variables";
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
 
 .next {
   width: 28.6rem;
   &__container {
     display: flex;
     margin-bottom: 2.4rem;
+    cursor: pointer;
   }
 
   &__image {
