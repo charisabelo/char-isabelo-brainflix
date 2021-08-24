@@ -1,15 +1,16 @@
 import logo from "../../assets/Logo/Logo-brainflix.svg";
 import "./Navbar.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
     return (
       <div className="header__nav">
         <div className="header__logo-container">
-          <a href="/">
+          <Link to="/">
             <img className="header__logo" src={logo} alt="brainflix logo" />
-          </a>
+          </Link>
         </div>
         <div className="header__form-container">
           <form className="header__form" action="">
@@ -21,7 +22,9 @@ class Navbar extends React.Component {
             />
           </form>
           <div className="header__btn-container">
-            <input className="header__btn" type="submit" value="UPLOAD" />
+            <Link to="/upload" className="header__btn">
+              UPLOAD
+            </Link>
             <div className="header__user-photo"></div>
           </div>
         </div>

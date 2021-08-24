@@ -5,6 +5,7 @@
   &__nav {
     @include flex-column;
     padding: 1.3rem 0 0.8rem 0;
+    border-bottom: 0.1rem solid $mercury;
   }
 
   &__logo-container {
@@ -47,8 +48,9 @@
     border-radius: 0.5rem;
     background-image: url(../../assets/Icons/Icon-upload.svg);
     background-repeat: no-repeat;
-    background-position: 7.2rem 1.3rem;
+    background-position: 7.2rem 1.5rem;
     cursor: pointer;
+    font-weight: 600;
   }
 
   &__user-photo {
@@ -92,10 +94,9 @@
     }
 
     &__btn {
-      padding: 1.3rem 1.3rem 1.2rem 3.3rem;
-      // background-position: 7.2rem 1.3rem;
+      padding: 1.2rem 1.3rem 1.1rem 3.3rem;
       border-radius: 0.4rem;
-      background-position: 1.1rem 1.3rem;
+      background-position: 1.1rem 1.5rem;
       margin-right: 2.4rem;
     }
   }
@@ -134,9 +135,8 @@
 
     &__btn {
       height: 4.7rem;
-      // padding: 1.3rem 6.7rem 1.3rem 9.7rem;
-      padding-right: 1.5rem;
-      background-position: 1.5rem 1.7rem;
+      padding: 1.5rem 1.5rem 1.1rem 3.4rem;
+      background-position: 1.3rem 1.7rem;
 
       &-container {
         margin-bottom: 0;
