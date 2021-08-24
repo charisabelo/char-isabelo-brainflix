@@ -19,11 +19,11 @@ class Navbar extends React.Component {
               placeholder="Search"
               required
             />
-            <div className="header__btn-container">
-              <input className="header__btn" type="submit" value="UPLOAD" />
-              <div className="header__user-photo"></div>
-            </div>
           </form>
+          <div className="header__btn-container">
+            <input className="header__btn" type="submit" value="UPLOAD" />
+            <div className="header__user-photo"></div>
+          </div>
         </div>
       </div>
     );
