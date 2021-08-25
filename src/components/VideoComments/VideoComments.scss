@@ -55,6 +55,7 @@
     background-color: $alabaster;
     margin-bottom: 1.6rem;
     font-family: "avenir";
+    outline: none;
 
     &::placeholder {
       font-family: "avenir";
@@ -63,8 +64,9 @@
       font-size: 1.45rem;
     }
 
-    &:active {
-      outline: $brainflix-blue solid 0.2rem;
+    &:active,
+    &:focus {
+      border: $brainflix-blue solid 0.2rem;
       border-radius: 0.5rem;
     }
   }

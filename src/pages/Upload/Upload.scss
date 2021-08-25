@@ -1,4 +1,5 @@
 @use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
 
 .upload {
   display: flex;
@@ -6,11 +7,12 @@
   justify-self: center;
   width: 28rem;
   margin: 0 auto;
+  padding-bottom: 2rem;
 
   &__header {
     font-size: 2.6rem;
     color: $black;
-    padding: 3.5rem 0 4.1rem 0;
+    padding: 3.5rem 0 4rem 0;
   }
 
   &__thumbnail {
@@ -45,5 +47,177 @@
     font-weight: 600;
     color: $silver;
     margin-bottom: 0.5rem;
+  }
+
+  &__title-container {
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    border: 0.1rem solid $silver;
+    border-radius: 0.5rem;
+    background-color: $alabaster;
+    height: 4.6rem;
+    padding-left: 1.5rem;
+    outline: none;
+
+    &::placeholder {
+      box-sizing: border-box;
+      color: $darkblack;
+      font-family: "avenir", sans-serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+
+    &:active,
+    &:focus {
+      box-sizing: border-box;
+      border: $brainflix-blue solid 0.2rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $silver;
+
+    &-container {
+      box-sizing: border-box;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__textarea {
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    width: 28rem;
+    height: 15rem;
+    border: 0.1rem solid $silver;
+    border-radius: 0.4rem;
+    background-color: $alabaster;
+    padding: 1.5rem;
+    outline: none;
+
+    &::placeholder {
+      box-sizing: border-box;
+      color: $darkblack;
+      font-family: "avenir", sans-serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+
+    &:active,
+    &:focus {
+      box-sizing: border-box;
+      border: $brainflix-blue solid 0.2rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__publish-btn {
+    width: 28rem;
+    border: none;
+    background-color: $brainflix-blue;
+    color: $white;
+    padding: 1.5rem 0;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__cancel-btn {
+    width: 28rem;
+    border: none;
+    background-color: $white;
+    color: $brainflix-blue;
+    padding: 1.5rem 0;
+    border-radius: 0.4rem;
+    font-weight: 600;
+  }
+
+  @include tablet {
+    & {
+      width: 72rem;
+    }
+
+    &__header {
+      font-size: 2.9rem;
+      padding-bottom: 3.3rem;
+
+      &-container {
+        border-bottom: 0.1rem solid $mercury;
+        margin-bottom: 3.1rem;
+      }
+    }
+
+    &__description-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__textarea {
+      width: 100%;
+    }
+
+    &__form-details {
+      border-bottom: 0.1rem solid $mercury;
+      padding-bottom: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    &__btn-container {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &__publish-btn {
+      width: 16rem;
+    }
+
+    &__cancel-btn {
+      width: 16rem;
+    }
+  }
+
+  @include desktop {
+    & {
+      width: 110rem;
+    }
+
+    &__form-details {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__thumbnail {
+      &-image {
+        width: 35rem;
+        height: auto;
+      }
+
+      &-container {
+        margin-right: 2.3rem;
+      }
+    }
+
+    &__title-container {
+      width: auto;
+    }
+
+    &__input {
+      width: 72.6rem;
+    }
+
+    &__textarea {
+      height: 9.7rem;
+    }
   }
 }
