@@ -1,0 +1,17 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+
+.loader {
+  color: #e0e0e0;
+  height: 18.2rem;
+  width: 100%;
+  background-color: #e0e0e0;
+
+  @include tablet {
+    height: 39.2rem;
+  }
+
+  @include desktop {
+    height: 55.3rem;
+  }
+}

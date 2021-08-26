@@ -1,9 +1,14 @@
 import React from "react";
 import "./VideoComments.scss";
 import Comment from "../Comment/Comment";
+import { TextBlock } from "react-placeholder/lib/placeholders";
 
 class VideoComments extends React.Component {
   render() {
+    if (!this.props.currentVideo) {
+      return <TextBlock rows={3} color="#e0e0e0" />;
+    }
+
     const current = this.props.currentVideo;
 
     return (

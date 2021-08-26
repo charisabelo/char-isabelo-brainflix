@@ -9,6 +9,12 @@
     cursor: pointer;
   }
 
+  &__container:active,
+  &__container:visited,
+  &__container:link {
+    color: black;
+  }
+
   &__image {
     background-position: center;
     background-size: cover;

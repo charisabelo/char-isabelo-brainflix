@@ -1,8 +1,13 @@
 import React from "react";
 import "./HeroVideo.scss";
+import LoadPlaceholder from "../LoadPlaceholder/LoadPlaceholder";
 
 class HeroVideo extends React.Component {
   render() {
+    if (!this.props.selectedVideo) {
+      return <LoadPlaceholder />;
+    }
+
     return (
       <div className="hero">
         <div className="hero__video--container">

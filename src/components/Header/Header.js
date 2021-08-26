@@ -12,7 +12,7 @@ class Header extends React.Component {
         <Switch>
           <Route path="/" exact component={Hero}></Route>
           <Route path="/upload" component={Upload}></Route>
-          {/* <Route path="/upload" component={Upload}></Route> */}
+          <Route path="/video/:id" component={Hero}></Route>
         </Switch>
       </header>
     );
