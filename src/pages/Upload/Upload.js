@@ -2,11 +2,15 @@ import React from "react";
 import "./Upload.scss";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import { withRouter } from "react-router";
+import Redirect from "../Redirect/Redirect";
 
 const Upload = (props) => {
   const submitForm = (e) => {
     e.preventDefault();
-    props.history.push("/");
+    props.history.push("/redirect");
+    setTimeout(function () {
+      props.history.push("/");
+    }, 2000);
   };
 
   return (
