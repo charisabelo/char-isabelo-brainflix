@@ -6,7 +6,9 @@ import { TextBlock } from "react-placeholder/lib/placeholders";
 class NextVideosList extends React.Component {
   render() {
     if (!this.props.currentVideo) {
-      return <TextBlock rows={3} color="#e0e0e0" />;
+      return (
+        <TextBlock rows={3} color="#e0e0e0" style={{ marginTop: "3rem" }} />
+      );
     }
 
     let videosList = this.props.data;
@@ -26,7 +28,6 @@ class NextVideosList extends React.Component {
                 title={video.title}
                 channel={video.channel}
                 image={video.image}
-                handleClick={this.props.handleClick}
               />
             );
           })}

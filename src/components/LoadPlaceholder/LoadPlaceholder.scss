@@ -2,10 +2,10 @@
 @use "../../partials/variables" as *;
 
 .loader {
-  color: #e0e0e0;
+  color: $loader;
   height: 18.2rem;
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: $loader;
 
   @include tablet {
     height: 39.2rem;

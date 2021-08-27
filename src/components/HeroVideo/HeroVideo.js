@@ -9,7 +9,7 @@ class HeroVideo extends React.Component {
     }
 
     return (
-      <div className="hero">
+      <header className="hero">
         <div className="hero__video--container">
           <video
             className="hero__video"
@@ -37,7 +37,7 @@ class HeroVideo extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }

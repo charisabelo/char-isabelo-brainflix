@@ -1,11 +1,18 @@
 import "./App.scss";
-import Header from "./components/Header/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Body from "./components/Body/Body";
+import Upload from "./pages/Upload/Upload";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Body}></Route>
+        <Route path="/upload" component={Upload}></Route>
+        <Route path="/video/:id" component={Body}></Route>
+      </Switch>
     </BrowserRouter>
   );
 }

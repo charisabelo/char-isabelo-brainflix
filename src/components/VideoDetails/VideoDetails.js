@@ -5,7 +5,7 @@ import { TextRow } from "react-placeholder/lib/placeholders";
 class VideoDetails extends React.Component {
   render() {
     if (!this.props.currentVideo) {
-      return <TextRow color="#e0e0e0" />;
+      return <TextRow color="#e0e0e0" style={{ marginTop: "3rem" }} />;
     }
 
     const unixDate = this.props.currentVideo.timestamp;

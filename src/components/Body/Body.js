@@ -1,22 +1,27 @@
-import "./Hero.scss";
+import "./Body.scss";
 import Main from "../Main/Main";
 import React from "react";
 import HeroVideo from "../HeroVideo/HeroVideo";
 import { api, url } from "../../Utils";
 import axios from "axios";
 
-class Hero extends React.Component {
+class Body extends React.Component {
   state = {
     data: [],
     selectedVideo: null,
   };
 
   fetchVideo = (videoId) => {
-    axios.get(`${url}videos/${videoId}${api}`).then((res) => {
-      this.setState({
-        selectedVideo: res.data,
+    axios
+      .get(`${url}videos/${videoId}${api}`)
+      .then((res) => {
+        this.setState({
+          selectedVideo: res.data,
+        });
+      })
+      .catch((error) => {
+        this.componentDidMount();
       });
-    });
   };
 
   componentDidMount() {
@@ -45,16 +50,12 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <HeroVideo selectedVideo={this.state.selectedVideo} />
-        <Main
-          data={this.state.data}
-          currentVideo={this.state.selectedVideo}
-          handleClick={this.currentVideo}
-        />
-      </div>
+        <Main data={this.state.data} currentVideo={this.state.selectedVideo} />
+      </>
     );
   }
 }
 
-export default Hero;
+export default Body;

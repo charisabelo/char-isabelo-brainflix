@@ -6,14 +6,13 @@ import NextVideosList from "../NextVideosList/NextVideosList";
 class Main extends React.Component {
   render() {
     return (
-      <div className="main">
+      <main className="main">
         <VideoInfo currentVideo={this.props.currentVideo} />
         <NextVideosList
           data={this.props.data}
           currentVideo={this.props.currentVideo}
-          handleClick={this.props.handleClick}
         />
-      </div>
+      </main>
     );
   }
 }
