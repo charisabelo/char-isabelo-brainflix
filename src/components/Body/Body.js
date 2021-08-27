@@ -43,8 +43,14 @@ class Body extends React.Component {
     const currentVideoId = this.props.match.params.id;
     const prevVideoId = prevProps.match.params.id;
 
-    if (currentVideoId !== prevVideoId) {
-      this.fetchVideo(currentVideoId);
+    const first = this.state.data[0].id;
+
+    if (currentVideoId) {
+      if (currentVideoId !== prevVideoId) {
+        return this.fetchVideo(currentVideoId);
+      }
+    } else {
+      return this.fetchVideo(first);
     }
   }
 

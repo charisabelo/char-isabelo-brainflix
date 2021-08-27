@@ -8,7 +8,6 @@ class Navbar extends React.Component {
     return (
       <nav className="nav">
         <div className="nav__logo-container">
-          {/* <Link to={`/video/1af0jruup5gu`}> */}
           <Link to="/">
             <img className="nav__logo" src={logo} alt="brainflix logo" />
           </Link>
