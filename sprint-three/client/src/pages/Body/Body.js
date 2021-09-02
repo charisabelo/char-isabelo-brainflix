@@ -2,10 +2,7 @@ import "./Body.scss";
 import Main from "../Main/Main";
 import React from "react";
 import HeroVideo from "../HeroVideo/HeroVideo";
-import { api, url } from "../../Utils";
 import axios from "axios";
-
-let source = axios.CancelToken.source();
 
 class Body extends React.Component {
   state = {
@@ -13,9 +10,13 @@ class Body extends React.Component {
     selectedVideo: null,
   };
 
+  abortController = new AbortController();
+
   fetchVideo = (videoId) => {
     axios
-      .get(`${url}videos/${videoId}${api}`, { cancelToken: source.token })
+      .get(`http://localhost:8080/videos/${videoId}`, {
+        signal: this.abortController.signal,
+      })
       .then((res) => {
         this.setState({
           selectedVideo: res.data,
@@ -28,11 +29,12 @@ class Body extends React.Component {
   };
 
   componentDidMount() {
-    source = axios.CancelToken.source();
     const currentVideo = this.props.match.params.id;
 
     axios
-      .get(`${url}videos${api}`, { cancelToken: source.token })
+      .get(`http://localhost:8080/videos/`, {
+        signal: this.abortController.signal,
+      })
       .then((res) => {
         this.setState({
           data: res.data,
@@ -58,7 +60,7 @@ class Body extends React.Component {
   }
 
   componentWillUnmount() {
-    source.cancel("component unmounted");
+    this.abortController.abort();
   }
 
   render() {

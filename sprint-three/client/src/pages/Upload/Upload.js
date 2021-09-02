@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Upload.scss";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import { withRouter } from "react-router";
+import axios from "axios";
 
 const Upload = ({ history }) => {
   const titleRef = useRef();
@@ -13,6 +14,15 @@ const Upload = ({ history }) => {
     if (titleRef.current.value === "" || descriptionRef.current.value === "") {
       return alert("You must have a Title and Description to upload.");
     }
+
+    let newVideo = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+    };
+    axios.post("http://localhost:8080/videos", newVideo).then((response) => {
+      // console.log(response);
+    });
+
     history.push("/redirect");
     setTimeout(function () {
       history.push("/");
