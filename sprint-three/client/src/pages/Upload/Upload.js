@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Upload.scss";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import { withRouter } from "react-router";
 
 const Upload = ({ history }) => {
+  const titleRef = useRef();
+  const descriptionRef = useRef();
+
   const submitForm = (e) => {
     e.preventDefault();
+
+    if (titleRef.current.value === "" || descriptionRef.current.value === "") {
+      return alert("You must have a Title and Description to upload.");
+    }
     history.push("/redirect");
     setTimeout(function () {
       history.push("/");
@@ -38,6 +45,7 @@ const Upload = ({ history }) => {
                 className="upload__input"
                 name="title"
                 type="text"
+                ref={titleRef}
                 placeholder="Add a title to your video"
               />
             </div>
@@ -48,6 +56,7 @@ const Upload = ({ history }) => {
               <textarea
                 className="upload__textarea"
                 name="description"
+                ref={descriptionRef}
                 placeholder="Add a description of your video"
               ></textarea>
             </div>

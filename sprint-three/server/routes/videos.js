@@ -3,11 +3,23 @@ const router = express.Router();
 const videos = require("../data/videos.json");
 const uuid = require("uuid");
 
+let videosBasicDetails = videos.map((video) => {
+  const newObj = {
+    id: video.id,
+    title: video.title,
+    channel: video.channel,
+    image: video.image,
+    description: video.description,
+  };
+  return newObj;
+});
+
 router.get("/videos", (req, res) => {
-  return res.status(200).json(videos);
+  return res.status(200).json(videosBasicDetails);
 });
 
 router.get("/videos/:id", (req, res) => {
+  console.log(req.params);
   const video = videos.find((video) => video.id === req.params.id);
 
   if (video) {

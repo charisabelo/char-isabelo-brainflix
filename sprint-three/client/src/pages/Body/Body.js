@@ -5,6 +5,8 @@ import HeroVideo from "../HeroVideo/HeroVideo";
 import { api, url } from "../../Utils";
 import axios from "axios";
 
+let source = axios.CancelToken.source();
+
 class Body extends React.Component {
   state = {
     data: [],
@@ -13,10 +15,11 @@ class Body extends React.Component {
 
   fetchVideo = (videoId) => {
     axios
-      .get(`${url}videos/${videoId}${api}`)
+      .get(`${url}videos/${videoId}${api}`, { cancelToken: source.token })
       .then((res) => {
         this.setState({
           selectedVideo: res.data,
+          isLoading: false,
         });
       })
       .catch((error) => {
@@ -25,18 +28,22 @@ class Body extends React.Component {
   };
 
   componentDidMount() {
+    source = axios.CancelToken.source();
     const currentVideo = this.props.match.params.id;
 
-    axios.get(`${url}videos${api}`).then((res) => {
-      this.setState({
-        data: res.data,
+    axios
+      .get(`${url}videos${api}`, { cancelToken: source.token })
+      .then((res) => {
+        this.setState({
+          data: res.data,
+          isLoading: false,
+        });
+
+        const firstVideo = res.data[0];
+        const videoToLoad = currentVideo ? currentVideo : firstVideo.id;
+
+        this.fetchVideo(videoToLoad);
       });
-
-      const firstVideo = res.data[0];
-      const videoToLoad = currentVideo ? currentVideo : firstVideo.id;
-
-      this.fetchVideo(videoToLoad);
-    });
   }
 
   componentDidUpdate(prevProps) {
@@ -48,6 +55,10 @@ class Body extends React.Component {
     currentVideoId && currentVideoId !== prevVideoId
       ? this.fetchVideo(currentVideoId)
       : this.fetchVideo(first);
+  }
+
+  componentWillUnmount() {
+    source.cancel("component unmounted");
   }
 
   render() {
