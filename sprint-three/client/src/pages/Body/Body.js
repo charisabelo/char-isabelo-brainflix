@@ -20,7 +20,7 @@ class Body extends React.Component {
         });
       })
       .catch((error) => {
-        this.componentDidMount();
+        console.log(error);
       });
   };
 
@@ -45,13 +45,9 @@ class Body extends React.Component {
 
     const first = this.state.data[0].id;
 
-    if (currentVideoId) {
-      if (currentVideoId !== prevVideoId) {
-        return this.fetchVideo(currentVideoId);
-      }
-    } else {
-      return this.fetchVideo(first);
-    }
+    currentVideoId && currentVideoId !== prevVideoId
+      ? this.fetchVideo(currentVideoId)
+      : this.fetchVideo(first);
   }
 
   render() {

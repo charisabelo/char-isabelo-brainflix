@@ -4,17 +4,16 @@ import LoadPlaceholder from "../LoadPlaceholder/LoadPlaceholder";
 
 class HeroVideo extends React.Component {
   render() {
-    if (!this.props.selectedVideo) {
+    const { selectedVideo } = this.props;
+
+    if (!selectedVideo) {
       return <LoadPlaceholder />;
     }
 
     return (
       <header className="hero">
         <div className="hero__video--container">
-          <video
-            className="hero__video"
-            poster={this.props.selectedVideo.image}
-          ></video>
+          <video className="hero__video" poster={selectedVideo.image}></video>
         </div>
         <div className="hero__controls-container">
           <div className="hero__controls">

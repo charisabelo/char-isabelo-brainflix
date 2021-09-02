@@ -5,11 +5,18 @@ import { TextBlock } from "react-placeholder/lib/placeholders";
 
 class VideoComments extends React.Component {
   render() {
-    if (!this.props.currentVideo) {
+    const { currentVideo } = this.props;
+
+    if (!currentVideo) {
       return <TextBlock rows={3} color="#e0e0e0" />;
     }
 
-    const current = this.props.currentVideo;
+    const current = currentVideo;
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      e.target.comment.value = "";
+    };
 
     return (
       <section className="comments">
@@ -21,7 +28,7 @@ class VideoComments extends React.Component {
             <div className="comments__user"></div>
           </div>
           <div className="comments__comment-area">
-            <form className="comments__form" action="">
+            <form className="comments__form" action="" onSubmit={handleSubmit}>
               <div className="comments__label-container ">
                 <label className="comments__label" htmlFor="comment">
                   JOIN THE CONVERSATION

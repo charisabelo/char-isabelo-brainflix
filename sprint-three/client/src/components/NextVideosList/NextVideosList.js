@@ -5,15 +5,17 @@ import { TextBlock } from "react-placeholder/lib/placeholders";
 
 class NextVideosList extends React.Component {
   render() {
-    if (!this.props.currentVideo) {
+    const { data, currentVideo } = this.props;
+
+    if (!currentVideo) {
       return (
         <TextBlock rows={3} color="#e0e0e0" style={{ marginTop: "3rem" }} />
       );
     }
 
-    let videosList = this.props.data;
+    let videosList = data;
     let filteredArray = videosList.filter(
-      (video) => video.id !== this.props.currentVideo.id
+      (video) => video.id !== currentVideo.id
     );
 
     return (

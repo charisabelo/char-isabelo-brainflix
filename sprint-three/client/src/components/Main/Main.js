@@ -5,13 +5,12 @@ import NextVideosList from "../NextVideosList/NextVideosList";
 
 class Main extends React.Component {
   render() {
+    const { currentVideo, data } = this.props;
+
     return (
       <main className="main">
-        <VideoInfo currentVideo={this.props.currentVideo} />
-        <NextVideosList
-          data={this.props.data}
-          currentVideo={this.props.currentVideo}
-        />
+        <VideoInfo currentVideo={currentVideo} />
+        <NextVideosList data={data} currentVideo={currentVideo} />
       </main>
     );
   }

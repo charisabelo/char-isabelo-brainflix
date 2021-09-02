@@ -3,7 +3,9 @@ import "./Comment.scss";
 
 class Comment extends React.Component {
   render() {
-    const unixDate = this.props.timestamp;
+    const { timestamp, name, comment } = this.props;
+
+    const unixDate = timestamp;
     let date = new Date(unixDate);
     const newDateOptions = {
       year: "numeric",
@@ -18,10 +20,10 @@ class Comment extends React.Component {
         </div>
         <div className="comment__info-container">
           <div className="comment__user-info">
-            <p className="comment__user-name">{this.props.name}</p>
+            <p className="comment__user-name">{name}</p>
             <p className="comment__user-date">{dateFormatted}</p>
           </div>
-          <div className="comment__paragraph">{this.props.comment}</div>
+          <div className="comment__paragraph">{comment}</div>
         </div>
       </div>
     );
