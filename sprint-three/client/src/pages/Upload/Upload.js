@@ -20,7 +20,7 @@ const Upload = ({ history }) => {
       description: e.target.description.value,
     };
     axios.post("http://localhost:8080/videos", newVideo).then((response) => {
-      // console.log(response);
+      console.log(response);
     });
 
     history.push("/redirect");

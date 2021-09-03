@@ -1,7 +1,7 @@
 import "./Body.scss";
-import Main from "../Main/Main";
+import Main from "../../components/Main/Main";
 import React from "react";
-import HeroVideo from "../HeroVideo/HeroVideo";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import axios from "axios";
 
 class Body extends React.Component {
@@ -10,17 +10,12 @@ class Body extends React.Component {
     selectedVideo: null,
   };
 
-  abortController = new AbortController();
-
   fetchVideo = (videoId) => {
     axios
-      .get(`http://localhost:8080/videos/${videoId}`, {
-        signal: this.abortController.signal,
-      })
+      .get(`http://localhost:8080/videos/${videoId}`)
       .then((res) => {
         this.setState({
           selectedVideo: res.data,
-          isLoading: false,
         });
       })
       .catch((error) => {
@@ -32,16 +27,14 @@ class Body extends React.Component {
     const currentVideo = this.props.match.params.id;
 
     axios
-      .get(`http://localhost:8080/videos/`, {
-        signal: this.abortController.signal,
-      })
+      .get("http://localhost:8080/videos")
       .then((res) => {
         this.setState({
           data: res.data,
-          isLoading: false,
         });
-
-        const firstVideo = res.data[0];
+      })
+      .then(() => {
+        const firstVideo = this.state.data[0];
         const videoToLoad = currentVideo ? currentVideo : firstVideo.id;
 
         this.fetchVideo(videoToLoad);
@@ -52,15 +45,9 @@ class Body extends React.Component {
     const currentVideoId = this.props.match.params.id;
     const prevVideoId = prevProps.match.params.id;
 
-    const first = this.state.data[0].id;
-
-    currentVideoId && currentVideoId !== prevVideoId
-      ? this.fetchVideo(currentVideoId)
-      : this.fetchVideo(first);
-  }
-
-  componentWillUnmount() {
-    this.abortController.abort();
+    if (currentVideoId && currentVideoId !== prevVideoId) {
+      return this.fetchVideo(currentVideoId);
+    }
   }
 
   render() {

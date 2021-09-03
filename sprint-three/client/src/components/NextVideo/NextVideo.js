@@ -6,7 +6,7 @@ class NextVideo extends React.Component {
   render() {
     const { data, image, title, channel } = this.props;
     return (
-      <Link to={`/video/${data.id}`} className="next__container">
+      <Link to={`/videos/${data.id}`} className="next__container">
         <div className="next__image-container">
           <div
             className="next__image"

@@ -18,10 +18,12 @@ class VideoComments extends React.Component {
       e.target.comment.value = "";
     };
 
+    let comments = current.comments.length ? current.comments.length : 0;
+
     return (
       <section className="comments">
         <div className="comments__count">
-          <h3>{current.comments.length} comments</h3>
+          <h3>{comments} comments</h3>
         </div>
         <div className="comments__form-container">
           <div className="comments__user-container">
