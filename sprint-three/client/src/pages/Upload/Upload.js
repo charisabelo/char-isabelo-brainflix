@@ -19,9 +19,11 @@ const Upload = ({ history }) => {
       title: e.target.title.value,
       description: e.target.description.value,
     };
-    axios.post("http://localhost:8080/videos", newVideo).then((response) => {
-      console.log(response);
-    });
+    axios
+      .post("https://brainflix-char.herokuapp.com/videos", newVideo)
+      .then((response) => {
+        console.log(response);
+      });
 
     history.push("/redirect");
     setTimeout(function () {

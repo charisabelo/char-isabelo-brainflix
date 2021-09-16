@@ -2,8 +2,7 @@ const express = require("express");
 const videos = require("./routes/videos");
 const app = express();
 const cors = require("cors");
-
-const PORT = 8080;
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -15,6 +14,6 @@ app.use((req, res, next) => {
 
 app.use("/", videos);
 
-app.listen(PORT, () => {
-  console.log(`Running on port ${PORT}`);
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Running`);
 });

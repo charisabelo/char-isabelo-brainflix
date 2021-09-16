@@ -12,7 +12,7 @@ class Body extends React.Component {
 
   fetchVideo = (videoId) => {
     axios
-      .get(`http://localhost:8080/videos/${videoId}`)
+      .get(`https://brainflix-char.herokuapp.com/videos/${videoId}`)
       .then((res) => {
         this.setState({
           selectedVideo: res.data,
@@ -27,7 +27,7 @@ class Body extends React.Component {
     const currentVideo = this.props.match.params.id;
 
     axios
-      .get("http://localhost:8080/videos")
+      .get("https://brainflix-char.herokuapp.com/videos")
       .then((res) => {
         this.setState({
           data: res.data,
